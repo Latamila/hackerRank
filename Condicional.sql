@@ -19,3 +19,10 @@ Obese is defined as weight(kg)/(height(m)2) >= 30.
 weight is in units kg.
 
 height is in units cm.*/
+
+SELECT
+  patient_id,
+  weight,
+  height,
+  weight / power(CAST(height AS float) / 100, 2) >= 30 AS obese
+FROM patients
